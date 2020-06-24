@@ -56,5 +56,32 @@ namespace Logic
             if (types == null) throw new ArgumentNullException();
             return types.Select(x => x.AssemblyQualifiedName);
         }
+
+
+        public async Task<IEnumerable<Type>> LoadTypes(string FilePath)
+        {
+            if (FilePath == null) throw new ArgumentNullException(nameof(FilePath));
+
+            var listStrings = await ReadFromDisk(FilePath);
+            if (listStrings == null) throw new NullReferenceException(nameof(listStrings));
+            var types = listStrings.Select(x => Type.GetType(x));
+            return types;
+        }
+
+        private async Task<IEnumerable<string>> ReadFromDisk(string FilePath)
+        {
+            try
+            {
+                return await Task.Run(() => File.ReadAllLines(FilePath));
+            }
+            catch (IOException ex)
+            {
+                throw new IOException("IO error occured at writing to disk", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("unhandled exception occured at writing to disk", ex);
+            }
+        }
     }
 }
