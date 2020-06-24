@@ -76,11 +76,11 @@ namespace Logic
             }
             catch (IOException ex)
             {
-                throw new IOException("IO error occured at writing to disk", ex);
+                throw new IOException("IO error occured at reading from file/disk", ex);
             }
             catch (Exception ex)
             {
-                throw new Exception("unhandled exception occured at writing to disk", ex);
+                throw new Exception("unhandled exception occured at reading from file/disk", ex);
             }
         }
     }
