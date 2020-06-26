@@ -14,7 +14,7 @@ namespace ConsoleApp
         {
             try
             {
-                var instanceService = new InstanceService();
+                IInstanceService instanceService = new InstanceService();
 
                 var types = instanceService.GetInstances<Vehicle>();
                 var sortedTypes = types.OrderBy(x => x.Name);
@@ -24,7 +24,7 @@ namespace ConsoleApp
                 }
                 Console.WriteLine("== end ==");
 
-                //var diskService = new TypesToDiskService();
+                //iTypesToDiskService diskService = new TypesToDiskService();
                 //await diskService.SaveTypes(types, filePath);
 
                 //var search = instanceService.SearchTypesByName<Vehicle>("c");

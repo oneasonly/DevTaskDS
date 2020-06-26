@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class TypesToDiskService
+    public class TypesToDiskService : ITypesToDiskService
     {
         /// <summary>
         /// Writes collection of types to a file

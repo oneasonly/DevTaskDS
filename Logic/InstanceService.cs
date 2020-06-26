@@ -10,7 +10,7 @@ namespace Logic
     /// <summary>
     /// service for work with Type instances and reflection
     /// </summary>
-    public class InstanceService
+    public class InstanceService : IInstanceService
     {
         /// <summary>
         /// Returns an instance of every class of type T in current assembly
@@ -33,7 +33,7 @@ namespace Logic
             if (assembly == null) throw new ArgumentNullException();
             var baseType = typeof(T);
             var derivedTypes = assembly.GetTypes()
-                .Where(x => baseType.IsAssignableFrom(x) );
+                .Where(x => baseType.IsAssignableFrom(x));
             return derivedTypes;
         }
 
