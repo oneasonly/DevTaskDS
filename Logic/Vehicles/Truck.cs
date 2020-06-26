@@ -8,5 +8,11 @@ namespace Logic
 {
     public class Truck : Vehicle
     {
+        public Truck()
+        {
+            MaxSpeed = 200;
+            Weight = 30000;
+            Name = "Truck";
+        }
     }
 }
