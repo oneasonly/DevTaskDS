@@ -13,10 +13,16 @@ namespace Logic
     {
         public Vehicle()
         {
-            MaxSpeed = 150;
-            Weight = 50;
+            Name = "Vehicle";
         }
-        public int MaxSpeed { get; }
-        public double Weight { get; }
+        /// <summary>
+        /// in kilometers per hour
+        /// </summary>
+        public int MaxSpeed { get; protected set; }
+        /// <summary>
+        /// in kilograms
+        /// </summary>
+        public double Weight { get; protected set; }
+        public string Name { get; protected set; }
     }
 }
