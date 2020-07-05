@@ -14,13 +14,18 @@ namespace ConsoleApp
         {
             try
             {
-                IInstanceService instanceService = new InstanceService();
+                var instanceService = new InstanceService();
 
-                var types = instanceService.GetInstances<Vehicle>();
+                var instances = instanceService.GetInstances<Vehicle>();
+                var types = instanceService.GetTypes<Vehicle>();
                 var sortedTypes = types.OrderBy(x => x.Name);
-                foreach (var type in sortedTypes)
+                foreach (var type in types)
                 {
                     Console.WriteLine(type.Name);
+                }
+                foreach (var item in instances)
+                {
+                    Console.WriteLine(item.ToString());
                 }
                 Console.WriteLine("== end ==");
 

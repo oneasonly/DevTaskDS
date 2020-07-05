@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="BaseTypeTransformsService.cs" />
-    <Compile Include="Interfaces\IInstanceService.cs" />
     <Compile Include="Interfaces\ITypesToDiskService1.cs" />
     <Compile Include="TypesToDiskService.cs" />
     <Compile Include="Vehicles\Bicycle.cs" />
